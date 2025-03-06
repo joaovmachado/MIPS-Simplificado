@@ -5,7 +5,6 @@ module instr_memory_tb;
   parameter DATA_WIDTH = 32;
 
   // Sinais de entrada/saída
-  logic clk;
   logic [ADDR_WIDTH-1 : 0] Read_address;
   logic [DATA_WIDTH-1 : 0] Instruction;
 
@@ -14,22 +13,21 @@ module instr_memory_tb;
     .ADDR_WIDTH(ADDR_WIDTH),
     .DATA_WIDTH(DATA_WIDTH)
   ) uut (
-    .clk(clk),
     .Read_address(Read_address),
     .Instruction(Instruction)
   );
 
-  // Geração do clock
-  initial begin
-    clk = 0;
-    forever #5 clk = ~clk; // Clock com período de 10 unidades de tempo
-  end
+  // // Geração do clock
+  // initial begin
+  //   clk = 0;
+  //   forever #5 clk = ~clk; // Clock com período de 10 unidades de tempo
+  // end
 
   // Inicialização do arquivo VCD
-  initial begin
-    $dumpfile("instr_memory_tb.vcd"); // Nome do arquivo VCD
-    $dumpvars(0, instr_memory_tb);    // Salva todas as variáveis do testbench
-  end
+  // initial begin
+  //   $dumpfile("../instr_memory_tb.vcd"); // Nome do arquivo VCD
+  //   $dumpvars(0, instr_memory_tb);    // Salva todas as variáveis do testbench
+  // end
 
   // Teste: Listar todo o conteúdo da memória
   initial begin
@@ -37,7 +35,7 @@ module instr_memory_tb;
     #10;
 
     // Itera sobre todos os endereços da memória
-    for (int i = 0; i < 3; i++) begin
+    for (int i = 0; i < 32; i++) begin
       Read_address = i; // Define o endereço de leitura
       #10; // Aguarda um ciclo de clock para a leitura ser realizada
       $display("Addr: %h, Data: %h", Read_address, Instruction); // Exibe o conteúdo

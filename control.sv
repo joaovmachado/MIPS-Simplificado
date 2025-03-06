@@ -1,5 +1,6 @@
 module control(
-  input logic [7:0] Instruction // Instruction[31-26]
+  input logic [31:0] Instruction,
+  output logic [31:0] Control_Word
 );
 
 ALU_control ALU_control (.ALU_OP({Instruction[7], Instruction[6]}));

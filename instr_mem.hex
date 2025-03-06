@@ -1,3 +1,67 @@
 0000_0005
 0000_000A
 0000_007C
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+0000_0000
+
+0      $zero
+1      $at
+2-3    $v0-1
+4-7    $a0-3
+8-15   $t0-7
+16-23  $s0-7
+24-25  $t8-9
+26-27  $k0-1
+28     $gp
+29     $sp
+30     $s8/$fp
+31     $ra
+
+LW1, LW2, ADD, BEQ, SUB e SW,.
+
+LW  $s1, 0($s0)    -- Vamos supor de que se trate de um valor 15 armazenado em 0x00
+LW  $s2, 1($s0)    -- Vamos supor de que se trate de um valor 5 armazenado em 0x01
+ADD $s3, $s1, $s1     s3 <= 15 + 15;
+BEQ $s0, $
+SUB $s1, $s3, $s2     s1 <= 30 - 5;
+SW  $s1, 3($s0)    -- Deve-se armazenar o valor 25 no endereço 0x03
+
+INITIAL
+0x00 15
+0x01 5
+
+(R) OP      RS       RT      RD     shamt     Func
+(I) OP      RS       RT        const or address
+(J) OP                    IMED
+  100011   RRRRR    RRRRR   AAAAA     AAAAA    AAAAAA (LW)
+  101011   RRRRR    RRRRR   AAAAA     AAAAA    AAAAAA (SW)
+  000000   RRRRR    RRRRR   RRRRR     XXXXX    XX0000 (ADD)
+  000000   RRRRR    RRRRR   RRRRR     XXXXX    XX0010 (SUB)
+  000100   AAAAA    AAAAA   AAAAA     AAAAA    AAAAAA (BEQ)+

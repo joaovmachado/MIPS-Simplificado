@@ -1,11 +1,11 @@
-`define ADD 3'b000
-`define SUB 3'b001
-`define SLL 3'b010
-`define SRL 3'b011
-`define SRA 3'b100
-`define OR  3'b101
-`define AND 3'b110
-`define XOR 3'b111
+`define ADD 3'b0010
+`define SUB 3'b0101
+`define SLL 3'b0000
+`define SRL 3'b0011
+`define SRA 3'b0100
+`define OR  3'b0001
+`define AND 3'b0110
+`define XOR 3'b0111
 
 module alu (
   input logic [31:0] in1, in2,

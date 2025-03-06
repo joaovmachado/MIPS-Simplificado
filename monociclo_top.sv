@@ -3,16 +3,18 @@ module monociclo_top(
   input logic rstn
 );
 
-main_control control (.Op(Instruction[31:26]));
+main_control control (
+  
+));
 
 datapath dp (
-  .clk(clk),
-  .rstn(rstn), 
+  .clk(),
+  .rstn(), 
   .wr_en(),
-  .rd_addr1(Instruction[25:21]), 
-  .rd_addr2(Instruction[20:16]),
-  .wr_addr(RegDst_mux),
-  .wr_data(MemtoReg_mux),
+  .rd_addr1(), 
+  .rd_addr2(),
+  .wr_addr(),
+  .wr_data(),
   .sig_ext_in(),
   .sig_ext_out(),
   .rd_data1(), 
@@ -24,6 +26,13 @@ instr_memory i_mem (
   .Read_address(),
   .Instruction()
 );
-data_memory d_mem (.*);
+data_memory d_mem (
+  .clk(),
+  .Address(),
+  .Write_data(),
+  .MemWrite(),
+  .MemRead(),
+  .Read_data()
+);
 
 endmodule
