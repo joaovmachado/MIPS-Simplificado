@@ -7,7 +7,7 @@
 `define AND 3'b110
 `define XOR 3'b111
 
-module ula (
+module alu (
   input logic [31:0] in1, in2,
   input logic [2:0] func,
   output logic [31:0] out,
