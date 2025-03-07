@@ -1,0 +1,20 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-top
+datapath
+-sv
+./ALU_control.sv
+./alu.sv
+./control.sv
+./data_memory.sv
+./datapath.sv
+./instr_memory.sv
+./main_control.sv
+./monociclo_top.sv
+./registerFile.sv
+./signalExtension.sv
+-gui
+-access
+rw

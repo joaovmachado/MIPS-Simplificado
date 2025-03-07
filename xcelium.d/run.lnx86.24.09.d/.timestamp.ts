@@ -1,0 +1,11 @@
+1741264638 /home/ci_inovador/Documentos/mips/MIPS-Simplificado/main_control.sv
+1741286689 /home/ci_inovador/Documentos/mips/MIPS-Simplificado/control.sv
+1741376098 /home/ci_inovador/Documentos/mips/MIPS-Simplificado/testbenches/instr_memory_tb.sv
+1741264638 /home/ci_inovador/Documentos/mips/MIPS-Simplificado/registerFile.sv
+1741368859 /home/ci_inovador/Documentos/mips/MIPS-Simplificado/alu.sv
+1741378392 /home/ci_inovador/Documentos/mips/MIPS-Simplificado/datapath.sv
+1741286656 /home/ci_inovador/Documentos/mips/MIPS-Simplificado/monociclo_top.sv
+1741369732 /home/ci_inovador/Documentos/mips/MIPS-Simplificado/ALU_control.sv
+1741264638 /home/ci_inovador/Documentos/mips/MIPS-Simplificado/signalExtension.sv
+1741376137 /home/ci_inovador/Documentos/mips/MIPS-Simplificado/instr_memory.sv
+1741286590 /home/ci_inovador/Documentos/mips/MIPS-Simplificado/data_memory.sv

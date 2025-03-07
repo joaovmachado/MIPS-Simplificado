@@ -1,0 +1,40 @@
+xrun: 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun	24.09-s001: Started on Mar 07, 2025 at 17:13:31 -03
+xrun
+	-top datapath
+	-sv
+	./ALU_control.sv
+	./alu.sv
+	./control.sv
+	./data_memory.sv
+	./datapath.sv
+	./instr_memory.sv
+	./main_control.sv
+	./monociclo_top.sv
+	./registerFile.sv
+	./signalExtension.sv
+	-gui
+	-access rw
+file: ./datapath.sv
+  input logic RegDst, ALUSrc, Brench, MemtoReg, RegWrite,
+      |
+xmvlog: *E,POLICI (./datapath.sv,10|6): Expecting a comma between adjacent port declarations.
+  input logic [25:0] Instruction;
+      |
+xmvlog: *E,POLICI (./datapath.sv,14|6): Expecting a comma between adjacent port declarations.
+  input logic [25:0] Instruction;
+                                |
+xmvlog: *E,ILLPID (./datapath.sv,14|32): Illegal port decl. [A.1.4][(IEEE-2001)].
+  input logic [31:0] dmem_data;
+                              |
+xmvlog: *E,ILLPID (./datapath.sv,17|30): Illegal port decl. [A.1.4][(IEEE-2001)].
+	module worklib.datapath:sv
+		errors: 4, warnings: 0
+file: ./monociclo_top.sv
+));
+ |
+xmvlog: *E,EXPSMC (./monociclo_top.sv,8|1): expecting a semicolon (';') [12.1.2][7.1(IEEE)].
+	module worklib.monociclo_top:sv
+		errors: 1, warnings: 0
+xrun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
+TOOL:	xrun	24.09-s001: Exiting on Mar 07, 2025 at 17:13:31 -03  (total: 00:00:00)
